@@ -6,6 +6,8 @@
 
 <script>
     import SearchBar from './components/SearchBar.vue'
+    const API_KEY = 'AIzaSyDGTrGuucZY7IpGmjH333Ruy9hjQOgF0ek'
+    
     export default {
         name: 'App',
         components: {
