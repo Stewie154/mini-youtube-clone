@@ -1,5 +1,8 @@
 # mini-youtube-clone
 
+## Youtube api docs
+https://developers.google.com/youtube/v3/docs/search
+
 ## Project setup
 ```
 npm install
