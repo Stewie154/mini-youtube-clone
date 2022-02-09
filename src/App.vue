@@ -1,11 +1,15 @@
 <template>
     <div>
-        <h1>hello vue</h1>
+        <SearchBar></SearchBar>
     </div>
 </template>
 
 <script>
+    import SearchBar from './components/SearchBar.vue'
     export default {
-        name: 'App'
+        name: 'App',
+        components: {
+            SearchBar
+        }
     }
 </script>
