@@ -28,27 +28,27 @@
                 videos: [
                     {
                         snippet: {
-                            title: 'Request Failed, default title'
+                            title: ''
                         }
                     },
                     {
                         snippet: {
-                            title: 'Request Failed, default title'
+                            title: ''
                         }
                     },
                     {
                         snippet: {
-                            title: 'Request Failed, default title'
+                            title: ''
                         }
                     },
                     {
                         snippet: {
-                            title: 'Request Failed, default title'
+                            title: ''
                         }
                     },
                     {
                         snippet: {
-                            title: 'Request Failed, default title'
+                            title: ''
                         }
                     }
                 ],
