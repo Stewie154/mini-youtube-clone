@@ -1,8 +1,10 @@
 <template>
     <div class="container">
         <SearchBar @searchSubmission="onSearchSubmission" />
-        <VideoDetail :video="selected_video" />
-        <VideoList @videoSelect="onVideoSelect" :videos="videos" :show_videos="show_videos"/>
+        <div class="row">
+            <VideoDetail :video="selected_video" />
+            <VideoList @videoSelect="onVideoSelect" :videos="videos" :show_videos="show_videos"/>
+        </div>
     </div>
 </template>
 
