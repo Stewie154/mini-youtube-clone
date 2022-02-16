@@ -1,6 +1,7 @@
 <template>
     <div class="container">
         <SearchBar @searchSubmission="onSearchSubmission" />
+        <VideoDetail :video="selected_video" />
         <VideoList @videoSelect="onVideoSelect" :videos="videos" :show_videos="show_videos"/>
     </div>
 </template>
@@ -8,6 +9,7 @@
 <script>
     import SearchBar from './components/SearchBar.vue'
     import VideoList from './components/VideoList.vue'
+    import VideoDetail from './components/VideoDetail.vue'
     import axios from 'axios'
 
     const API_KEY = 'AIzaSyBhkJqY8bT-40Kk7h2DDe4P60fzB3VWR-w'
@@ -16,7 +18,8 @@
         name: 'App',
         components: {
             SearchBar,
-            VideoList
+            VideoList,
+            VideoDetail
         },
         data() {
             return {
@@ -47,10 +50,14 @@
                         }
                     }
                 ],
-                show_videos: false
+                show_videos: false,
+                selected_video: null
             }
         },
         methods: {
+             onVideoSelect(video) {
+                this.selected_video = video
+            },
             onSearchSubmission(searchSubmission) {
                 axios.get('https://www.googleapis.com/youtube/v3/search', {
                     params: {
@@ -70,9 +77,6 @@
                         video.snippet.title = error
                     });
                 })
-            },
-            onVideoSelect(video) {
-                console.log(video)
             }
         }
     }
