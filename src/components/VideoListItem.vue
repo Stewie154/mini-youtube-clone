@@ -1,5 +1,5 @@
 <template>
-    <li>{{video.snippet.title}}</li>
+    <li @click="onClick(video)">{{video.snippet.title}}</li>
 </template>
 
 <script>
@@ -7,6 +7,11 @@
         name: 'VideoListItem',
         props: {
             video: Object
+        },
+        methods: {
+            onClick: (video) => {
+                console.log(video)
+            }
         }
     }
 </script>
