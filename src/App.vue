@@ -66,7 +66,9 @@
                     }
                 }).catch(error => {
                     this.show_videos = true
-                    console.log(error)
+                    this.videos.forEach(video => {
+                        video.snippet.title = error
+                    });
                 })
             }
         }
