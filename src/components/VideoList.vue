@@ -1,5 +1,5 @@
 <template>
-    <ul>
+    <ul class="list-group" v-if="show_videos == true">
         <VideoListItem 
             v-for="video in videos" 
             :key="video.etag" 
@@ -16,7 +16,8 @@
             VideoListItem
         },
         props: {
-            videos: Array
+            videos: Array,
+            show_videos: Boolean
         }
     }
 </script>

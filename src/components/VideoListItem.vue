@@ -1,5 +1,10 @@
 <template>
-    <li @click="onClick(video)">{{video.snippet.title}}</li>
+    <li
+        @click="onClick(video)"
+        class="list-group-item"
+    >
+        {{video.snippet.title}}
+    </li>
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SearchBar @termChange="onTermChange"></SearchBar>
-        <VideoList :videos="videos"/>
+        <VideoList :videos="videos" :show_videos="show_videos"/>
     </div>
 </template>
 
@@ -20,7 +20,34 @@
         },
         data() {
             return {
-                videos: []
+                videos: [
+                    {
+                        snippet: {
+                            title: 'Request Failed, default title'
+                        }
+                    },
+                    {
+                        snippet: {
+                            title: 'Request Failed, default title'
+                        }
+                    },
+                    {
+                        snippet: {
+                            title: 'Request Failed, default title'
+                        }
+                    },
+                    {
+                        snippet: {
+                            title: 'Request Failed, default title'
+                        }
+                    },
+                    {
+                        snippet: {
+                            title: 'Request Failed, default title'
+                        }
+                    }
+                ],
+                show_videos: false
             }
         },
         methods: {
@@ -32,9 +59,15 @@
                         part: 'snippet',
                         q: searchTerm
                     }
-                }).then(response => 
-                    this.videos = response.data.items
-                )
+                }).then(response => {
+                    this.show_videos = true
+                    if (response != undefined) {
+                        this.videos = response.data.items
+                    }
+                }).catch(error => {
+                    this.show_videos = true
+                    console.log(error)
+                })
             }
         }
     }
