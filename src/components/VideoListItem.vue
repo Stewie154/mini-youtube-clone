@@ -1,10 +1,9 @@
 <template>
-    <li
-        @click="onClick(video)"
-        class="list-group-item"
-    >
-        <img :src="thumbnailUrl" alt="">
-        {{video.snippet.title}}
+    <li @click="onClick(video)" class="list-group-item media d-flex">
+        <img :src="thumbnailUrl" class="mr-3" alt="thumbnail">
+        <div class="media-body">
+            {{video.snippet.title}}
+        </div>
     </li>
 </template>
 
@@ -26,3 +25,17 @@
         }
     }
 </script>
+
+<style scoped>
+    li {
+        cursor: pointer;
+    }
+
+    li:hover {
+        background: #eee;
+    }
+
+    .mr-3 {
+        margin-right: 1rem;
+    }
+</style>
