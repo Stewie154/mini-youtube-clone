@@ -1,5 +1,5 @@
 <template>
-    <li @click="onClick(video)" class="list-group-item media d-flex">
+    <li @click="onVideoSelect" class="list-group-item media d-flex">
         <img :src="thumbnailUrl" class="mr-3" alt="thumbnail">
         <div class="media-body">
             {{video.snippet.title}}
@@ -14,8 +14,8 @@
             video: Object
         },
         methods: {
-            onClick: (video) => {
-                console.log(video)
+            onVideoSelect() {
+                this.$emit('videoSelect', this.video)
             }
         },
         computed: {

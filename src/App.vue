@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <SearchBar @searchSubmission="onSearchSubmission" />
-        <VideoList :videos="videos" :show_videos="show_videos"/>
+        <VideoList @videoSelect="onVideoSelect" :videos="videos" :show_videos="show_videos"/>
     </div>
 </template>
 
@@ -70,6 +70,9 @@
                         video.snippet.title = error
                     });
                 })
+            },
+            onVideoSelect(video) {
+                console.log(video)
             }
         }
     }
