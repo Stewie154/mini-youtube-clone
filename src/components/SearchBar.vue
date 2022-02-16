@@ -1,6 +1,6 @@
 <template>
     <div>
-        <input @input="onInput"/>
+        <input @input="onInput" @keyup.enter="onSearchSubmission"/>
     </div>
 </template>
 
@@ -10,6 +10,9 @@
         methods: {
             onInput (event) {
                 this.$emit('termChange', event.target.value)
+            },
+            onSearchSubmission (event) {
+                this.$emit('searchSubmission', event.target.value)
             }
         }
     }

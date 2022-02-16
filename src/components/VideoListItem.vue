@@ -3,7 +3,7 @@
         @click="onClick(video)"
         class="list-group-item"
     >
-        <img :src="video.snippet.thumbnails.default.url" alt="">
+        <img :src="thumbnailUrl" alt="">
         {{video.snippet.title}}
     </li>
 </template>
@@ -17,6 +17,11 @@
         methods: {
             onClick: (video) => {
                 console.log(video)
+            }
+        },
+        computed: {
+            thumbnailUrl() {
+                return this.video.snippet.thumbnails.default.url
             }
         }
     }
