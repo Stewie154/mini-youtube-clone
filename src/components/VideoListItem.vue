@@ -1,6 +1,6 @@
 <template>
     <li @click="onVideoSelect" class="list-group-item media d-flex">
-        <img :src="thumbnailUrl" class="mr-3" alt="thumbnail">
+        <img v-if="thumbnailUrl" :src="thumbnailUrl" class="mr-3" alt="thumbnail">
         <div class="media-body">
             {{video.snippet.title}}
         </div>
