@@ -10,7 +10,7 @@
     import VideoList from './components/VideoList.vue'
     import axios from 'axios'
 
-    const API_KEY = 'AIzaSyDGTrGuucZY7IpGmjH333Ruy9hjQOgF0ek'
+    const API_KEY = 'AIzaSyBhkJqY8bT-40Kk7h2DDe4P60fzB3VWR-w'
 
     export default {
         name: 'App',
@@ -51,13 +51,13 @@
             }
         },
         methods: {
-            onTermChange(searchTerm) {
+            onSearchSubmission(searchSubmission) {
                 axios.get('https://www.googleapis.com/youtube/v3/search', {
                     params: {
                         key: API_KEY,
                         type: 'video',
                         part: 'snippet',
-                        q: searchTerm
+                        q: searchSubmission
                     }
                 }).then(response => {
                     this.show_videos = true
@@ -70,9 +70,6 @@
                         video.snippet.title = error
                     });
                 })
-            },
-            onSearchSubmission(searchSubmission) {
-                console.log(searchSubmission);
             }
         }
     }
